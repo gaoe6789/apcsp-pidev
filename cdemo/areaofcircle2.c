@@ -12,16 +12,28 @@ float areaofcircle(float radius)
 int main()
 {
   char input[256];
-  float r;
-  printf("What is the radius? \n");
+  float r1;
+  float r2;
+  printf("What is the lower radius? \n");
   while (1)
   {
     fgets(input,256,stdin);
-    if (sscanf(input, "%f", &r) ==1) break;
+    if (sscanf(input, "%f", &r1) ==1) break;
     printf("Please enter a valid radius: \n");
   }
-  float area = areaofcircle(r);
+  printf("What is the upper radius \n");
+  while(1)
+    {
+    fgets(input,256,stdin);
+    if (sscanf(input, "%f", &r2) ==1) break;
+    printf("Please enter a valid radius: \n");
+  }
+for (int i = r1; i <= r2; i++)
+{
+  float area = areaofcircle(i);
   printf("The area is %f\n", area);
+
+}
+  
 }
  
-
